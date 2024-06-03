@@ -6,13 +6,13 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/module"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/register"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/judwhite/go-svc"
 	"github.com/unrolled/secure"
+	"github.com/xochat/TangSengDaoDaoServerLib/config"
+	"github.com/xochat/TangSengDaoDaoServerLib/module"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/register"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/wkhttp"
 )
 
 // Server唐僧叨叨server

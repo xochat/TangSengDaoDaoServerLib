@@ -103,11 +103,19 @@ func (c *Context) SendGroupUpdate(req *MsgGroupUpdateReq) error {
 		}
 		break
 	case common.GroupAttrKeyForbidden:
-		forbidden, _ := req.Data[common.GroupAttrKeyForbidden]
+		forbidden := req.Data[common.GroupAttrKeyForbidden]
 		if forbidden == "1" {
-			content += fmt.Sprintf(`开启了群禁言`)
+			content += `开启了群禁言`
 		} else {
-			content += fmt.Sprintf(`关闭了群禁言`)
+			content += `关闭了群禁言`
+		}
+		break
+	case common.GroupAttrKeyHideMemberInfo:
+		forbidden := req.Data[common.GroupAttrKeyHideMemberInfo]
+		if forbidden == "1" {
+			content += `开启了隐藏群成员信息`
+		} else {
+			content += `关闭了隐藏群成员信息`
 		}
 		break
 	case common.GroupAttrKeyInvite:

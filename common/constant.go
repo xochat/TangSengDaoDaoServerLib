@@ -105,8 +105,6 @@ const (
 	GroupAttrKeyNotice = "notice"
 	// GroupAttrKeyForbidden 群禁言
 	GroupAttrKeyForbidden = "forbidden"
-	// GroupAttrKeyHideMemberInfo 隐藏成员信息
-	GroupAttrKeyHideMemberInfo = "hide_member_info"
 	// GroupAttrKeyInvite 邀请确认
 	GroupAttrKeyInvite = "invite"
 	// GroupAttrKeyForbiddenAddFriend 群内禁止加好友

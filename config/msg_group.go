@@ -110,12 +110,12 @@ func (c *Context) SendGroupUpdate(req *MsgGroupUpdateReq) error {
 			content += `关闭了群禁言`
 		}
 		break
-	case common.GroupAttrKeyHideMemberInfo:
-		forbidden := req.Data[common.GroupAttrKeyHideMemberInfo]
+	case common.GroupAttrKeyForbiddenAddFriend:
+		forbidden := req.Data[common.GroupAttrKeyForbiddenAddFriend]
 		if forbidden == "1" {
-			content += `开启了隐藏群成员信息`
+			content += `开启了群内禁止加好友`
 		} else {
-			content += `关闭了隐藏群成员信息`
+			content += `关闭了群内禁止加好友`
 		}
 		break
 	case common.GroupAttrKeyInvite:

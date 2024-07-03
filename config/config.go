@@ -222,6 +222,7 @@ type Config struct {
 		VIVO            VIVOPush     // vivo推送
 		OPPO            OPPOPush     // oppo推送
 		FIREBASE        FIREBASEPush // FIREBASE推送
+		JIG             JIGPush      // 极光推送
 	}
 	// ---------- message ----------
 	Message struct {
@@ -452,6 +453,7 @@ func New() *Config {
 			VIVO            VIVOPush
 			OPPO            OPPOPush
 			FIREBASE        FIREBASEPush
+			JIG             JIGPush
 		}{
 			ContentDetailOn: true,
 			PushPoolSize:    100,
@@ -699,6 +701,10 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	// FIREBASE 推送
 	c.Push.FIREBASE.JsonPath = c.getString("push.firebase.jsonPath", c.Push.FIREBASE.JsonPath)
 	c.Push.FIREBASE.ProjectId = c.getString("push.firebase.projectId", c.Push.FIREBASE.ProjectId)
+	c.Push.FIREBASE.PackageName = c.getString("push.firebase.packageName", c.Push.FIREBASE.PackageName)
+	// 极光 推送
+	c.Push.JIG.AppKey = c.getString("push.firebase.jsonPath", c.Push.FIREBASE.JsonPath)
+	c.Push.JIG.MasterSecret = c.getString("push.firebase.projectId", c.Push.FIREBASE.ProjectId)
 	c.Push.FIREBASE.PackageName = c.getString("push.firebase.packageName", c.Push.FIREBASE.PackageName)
 	//#################### message ####################
 	c.Message.SendMessageOn = c.getBool("message.sendMessageOn", c.Message.SendMessageOn)
@@ -1026,6 +1032,12 @@ type FIREBASEPush struct {
 	PackageName string
 	JsonPath    string // firebase推送需要的json的路径
 	ProjectId   string // serviceAccountJson中的project_id值
+}
+
+// 极光推送
+type JIGPush struct {
+	AppKey       string
+	MasterSecret string
 }
 
 type duration struct {

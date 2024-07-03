@@ -703,9 +703,8 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.Push.FIREBASE.ProjectId = c.getString("push.firebase.projectId", c.Push.FIREBASE.ProjectId)
 	c.Push.FIREBASE.PackageName = c.getString("push.firebase.packageName", c.Push.FIREBASE.PackageName)
 	// 极光 推送
-	c.Push.JIG.AppKey = c.getString("push.firebase.jsonPath", c.Push.FIREBASE.JsonPath)
-	c.Push.JIG.MasterSecret = c.getString("push.firebase.projectId", c.Push.FIREBASE.ProjectId)
-	c.Push.FIREBASE.PackageName = c.getString("push.firebase.packageName", c.Push.FIREBASE.PackageName)
+	c.Push.JIG.AppKey = c.getString("push.jpush.appKey", c.Push.JIG.AppKey)
+	c.Push.JIG.MasterSecret = c.getString("push.jpush.masterSecret", c.Push.JIG.MasterSecret)
 	//#################### message ####################
 	c.Message.SendMessageOn = c.getBool("message.sendMessageOn", c.Message.SendMessageOn)
 	c.Message.SyncReadedCountIntervalSecond = c.getInt("message.syncReadedCountIntervalSecond", c.Message.SyncReadedCountIntervalSecond)

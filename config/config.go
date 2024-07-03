@@ -100,6 +100,7 @@ type Config struct {
 		Migration            bool          // 是否合并数据库
 		RedisAddr            string        // redis地址
 		RedisPass            string        // redis密码
+		RedisDB              int           // redis密码
 		AsynctaskRedisAddr   string        // 异步任务的redis地址 不写默认为RedisAddr的地址
 	}
 	// ---------- 分布式配置 ----------
@@ -304,6 +305,7 @@ func New() *Config {
 			Migration            bool
 			RedisAddr            string
 			RedisPass            string
+			RedisDB              int
 			AsynctaskRedisAddr   string
 		}{
 			MySQLAddr:            "root:demo@tcp(127.0.0.1:3306)/test?charset=utf8mb4&parseTime=true",
@@ -546,6 +548,7 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.DB.Migration = c.getBool("db.migration", c.DB.Migration)
 	c.DB.RedisAddr = c.getString("db.redisAddr", c.DB.RedisAddr)
 	c.DB.RedisPass = c.getString("db.redisPass", c.DB.RedisPass)
+	c.DB.RedisDB = c.getInt("db.redisDB", c.DB.RedisDB)
 	c.DB.AsynctaskRedisAddr = c.getString("db.asynctaskRedisAddr", c.DB.AsynctaskRedisAddr)
 
 	//#################### cluster ####################

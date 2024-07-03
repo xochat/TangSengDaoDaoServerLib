@@ -706,6 +706,7 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.Push.FIREBASE.ProjectId = c.getString("push.firebase.projectId", c.Push.FIREBASE.ProjectId)
 	c.Push.FIREBASE.PackageName = c.getString("push.firebase.packageName", c.Push.FIREBASE.PackageName)
 	// 极光 推送
+	c.Push.JIG.PackageName = c.getString("push.jpush.packageName", c.Push.JIG.PackageName)
 	c.Push.JIG.AppKey = c.getString("push.jpush.appKey", c.Push.JIG.AppKey)
 	c.Push.JIG.MasterSecret = c.getString("push.jpush.masterSecret", c.Push.JIG.MasterSecret)
 	//#################### message ####################
@@ -1038,6 +1039,7 @@ type FIREBASEPush struct {
 
 // 极光推送
 type JIGPush struct {
+	PackageName  string
 	AppKey       string
 	MasterSecret string
 }

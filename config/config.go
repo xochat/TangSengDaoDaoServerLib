@@ -459,11 +459,11 @@ func New() *Config {
 		}{
 			ContentDetailOn: true,
 			PushPoolSize:    100,
-			APNS: APNSPush{
-				Dev:      true,
-				Topic:    "com.xinbida.tangsengdaodao",
-				Password: "123456",
-			},
+			// APNS: APNSPush{
+			// 	Dev:      true,
+			// 	Topic:    "com.xinbida.tangsengdaodao",
+			// 	Password: "123456",
+			// },
 		},
 
 		// ---------- support  ----------

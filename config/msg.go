@@ -77,9 +77,6 @@ func (c *Context) UpdateIMToken(req UpdateIMTokenReq) (*UpdateIMTokenResp, error
 	if err != nil {
 		return nil, err
 	}
-	if err != nil {
-		return nil, err
-	}
 	err = c.handlerIMError(resp)
 	if err != nil {
 		return nil, err

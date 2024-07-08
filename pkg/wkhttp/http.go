@@ -2,7 +2,6 @@ package wkhttp
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 	"strconv"
 	"strings"
@@ -174,9 +173,7 @@ func (l *WKHttp) WKHttpHandler(handlerFunc HandlerFunc) gin.HandlerFunc {
 		hc.reset()
 		hc.Context = c
 		defer l.pool.Put(hc)
-		if handlerFunc == nil || hc == nil {
-			fmt.Print("1111111111\n")
-		}
+
 		handlerFunc(hc)
 
 		//handlerFunc(&Context{Context: c})

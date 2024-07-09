@@ -533,6 +533,19 @@ func (c *Context) SendRevoke(req *MsgRevokeReq) error {
 	})
 }
 
+// SendRevoke 发送撤回消息
+func (c *Context) SendMutualDelete(req *MsgMutualDeleteReq) error {
+	return c.SendCMD(MsgCMDReq{
+		FromUID:     req.FromUID,
+		ChannelID:   req.ChannelID,
+		ChannelType: req.ChannelType,
+		CMD:         "messageMutualDelete",
+		Param: map[string]interface{}{
+			"message_id": fmt.Sprintf("%d", req.MessageID),
+		},
+	})
+}
+
 // SendCMD 发送CMD消息
 func (c *Context) SendCMD(req MsgCMDReq) error {
 
@@ -718,6 +731,16 @@ type ChannelDeleteReq struct {
 
 // MsgRevokeReq 撤回消息请求
 type MsgRevokeReq struct {
+	FromUID      string `json:"from_uid"`
+	Operator     string `json:"operator"`      // 操作者uid
+	OperatorName string `json:"operator_name"` // 操作者名称
+	ChannelID    string `json:"channel_id"`    // 频道ID
+	ChannelType  uint8  `json:"channel_type"`  // 频道类型
+	MessageID    int64  `json:"message_id"`    // 消息ID
+}
+
+// MsgRevokeReq 撤回消息请求
+type MsgMutualDeleteReq struct {
 	FromUID      string `json:"from_uid"`
 	Operator     string `json:"operator"`      // 操作者uid
 	OperatorName string `json:"operator_name"` // 操作者名称

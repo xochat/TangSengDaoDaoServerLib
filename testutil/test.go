@@ -1,7 +1,7 @@
 package testutil
 
 import (
-	// "github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/event"
+	// "github.com/xochat/TangSengDaoDaoServer/modules/base/event"
 
 	"github.com/xochat/TangSengDaoDaoServerLib/config"
 	"github.com/xochat/TangSengDaoDaoServerLib/module"

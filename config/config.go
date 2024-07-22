@@ -141,7 +141,7 @@ type Config struct {
 	UniSMS                 UnismsConfig                 // unisms https://unisms.apistd.com/
 	AliyunSMS              AliyunSMSConfig              // aliyun sms
 	AliyunInternationalSMS AliyunInternationalSMSConfig // 阿里云国际短信
-
+	YunjiSMS               YunjiConcifg                 //云极短信
 	// ---------- 悟空IM ----------
 	WuKongIM struct {
 		APIURL       string // im基地址
@@ -617,6 +617,13 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.AliyunInternationalSMS.AccessKeyID = c.getString("aliyunInternationalSMS.accessKeyID", c.AliyunInternationalSMS.AccessKeyID)
 	c.AliyunInternationalSMS.AccessSecret = c.getString("aliyunInternationalSMS.accessSecret", c.AliyunInternationalSMS.AccessSecret)
 	c.AliyunInternationalSMS.SignName = c.getString("aliyunInternationalSMS.signName", c.AliyunInternationalSMS.SignName)
+	//YunjiSMS
+	c.YunjiSMS.Url = c.getString("yunjiSMS.url", c.YunjiSMS.Url)
+	c.YunjiSMS.AccessKey = c.getString("yunjiSMS.accessKey", c.YunjiSMS.AccessKey)
+	c.YunjiSMS.AccessSecret = c.getString("yunjiSMS.accessSecret", c.YunjiSMS.AccessSecret)
+	c.YunjiSMS.TemplateCode = c.getString("yunjiSMS.templateCode", c.YunjiSMS.TemplateCode)
+	c.YunjiSMS.SignCode = c.getString("yunjiSMS.signCode", c.YunjiSMS.SignCode)
+	c.YunjiSMS.ClassificationSecret = c.getString("yunjiSMS.classificationSecret", c.YunjiSMS.ClassificationSecret)
 
 	//#################### 悟空IM ####################
 	c.WuKongIM.APIURL = c.getString("wukongIM.apiURL", c.WuKongIM.APIURL)
@@ -946,6 +953,7 @@ const (
 	// SMSProviderAliyun aliyun
 	SMSProviderAliyun SMSProvider = "aliyun"
 	SMSProviderUnisms SMSProvider = "unisms" // 联合短信(https://unisms.apistd.com/docs/api/send/)
+	SMSProviderYunji  SMSProvider = "yunji"
 )
 
 // AliyunSMSConfig 阿里云短信
@@ -990,6 +998,16 @@ type AliyunInternationalSMSConfig struct {
 	AccessKeyID  string // aliyun的AccessKeyID
 	AccessSecret string // aliyun的AccessSecret
 	SignName     string // 签名
+}
+
+// Yunji短信
+type YunjiConcifg struct {
+	Url                  string
+	AccessKey            string
+	AccessSecret         string
+	TemplateCode         string
+	SignCode             string
+	ClassificationSecret string
 }
 
 // 苹果推送

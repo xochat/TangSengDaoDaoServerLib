@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/xochat/TangSengDaoDaoServerLib/common"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/common"
 	"go.uber.org/zap"
 )
 

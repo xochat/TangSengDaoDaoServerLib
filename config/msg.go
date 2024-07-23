@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"strings"
 
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/common"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/network"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/sendgrid/rest"
 	"github.com/tidwall/gjson"
-	"github.com/xochat/TangSengDaoDaoServerLib/common"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/network"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/util"
 	"go.uber.org/zap"
 )
 

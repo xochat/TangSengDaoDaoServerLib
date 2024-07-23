@@ -4,19 +4,19 @@ import (
 	"sync"
 	"time"
 
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/common"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/cache"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/db"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/log"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/pool"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/redis"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/wkevent"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/RussellLuo/timingwheel"
 	"github.com/bwmarrin/snowflake"
 	"github.com/gocraft/dbr/v2"
 	"github.com/olivere/elastic"
 	"github.com/opentracing/opentracing-go"
-	"github.com/xochat/TangSengDaoDaoServerLib/common"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/cache"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/db"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/pool"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/redis"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/wkevent"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/wkhttp"
 )
 
 // Context 配置上下文

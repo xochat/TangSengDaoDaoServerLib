@@ -3,8 +3,8 @@ package config
 import (
 	"errors"
 
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/network"
-	"github.com/xochat/TangSengDaoDaoServerLib/pkg/util"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/network"
+	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/util"
 )
 
 // IMStreamStart 消息流开始

@@ -3,8 +3,8 @@ package config
 import (
 	"fmt"
 
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/common"
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/util"
+	"github.com/xochat/TangSengDaoDaoServerLib/common"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/util"
 )
 
 // rtc 挂断

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	imlog "git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/log"
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/util"
+	imlog "github.com/xochat/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/util"
 	"go.uber.org/zap"
 )
 

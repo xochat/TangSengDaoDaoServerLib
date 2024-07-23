@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/spf13/cast"
 	"github.com/spf13/viper"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/util"
 	"go.uber.org/zap/zapcore"
 )
 

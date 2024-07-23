@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/sendgrid/rest"
+	"github.com/xochat/TangSengDaoDaoServerLib/pkg/util"
 )
 
 func Post(url string, body []byte, headers map[string]string) (resp *rest.Response, err error) {

@@ -1,4 +1,4 @@
-module git.wkwork.xyz/im/TangSengDaoDaoServerLib
+module github.com/xochat/TangSengDaoDaoServerLib
 
 go 1.21
 

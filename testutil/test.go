@@ -3,9 +3,9 @@ package testutil
 import (
 	// "github.com/xochat/TangSengDaoDaoServer/modules/base/event"
 
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/config"
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/module"
-	"git.wkwork.xyz/im/TangSengDaoDaoServerLib/server"
+	"github.com/xochat/TangSengDaoDaoServerLib/config"
+	"github.com/xochat/TangSengDaoDaoServerLib/module"
+	"github.com/xochat/TangSengDaoDaoServerLib/server"
 )
 
 // UID 测试用户ID

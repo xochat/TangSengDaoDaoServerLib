@@ -724,6 +724,7 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.Push.JIG.PackageName = c.getString("push.jpush.packageName", c.Push.JIG.PackageName)
 	c.Push.JIG.AppKey = c.getString("push.jpush.appKey", c.Push.JIG.AppKey)
 	c.Push.JIG.MasterSecret = c.getString("push.jpush.masterSecret", c.Push.JIG.MasterSecret)
+	c.Push.JIG.ApnsProduction = c.getBool("push.jpush.apnsProduction", c.Push.JIG.ApnsProduction)
 	//#################### message ####################
 	c.Message.SendMessageOn = c.getBool("message.sendMessageOn", c.Message.SendMessageOn)
 	c.Message.SyncReadedCountIntervalSecond = c.getInt("message.syncReadedCountIntervalSecond", c.Message.SyncReadedCountIntervalSecond)
@@ -1072,9 +1073,10 @@ type FIREBASEPush struct {
 
 // 极光推送
 type JIGPush struct {
-	PackageName  string
-	AppKey       string
-	MasterSecret string
+	PackageName    string
+	AppKey         string
+	MasterSecret   string
+	ApnsProduction bool
 }
 
 type duration struct {

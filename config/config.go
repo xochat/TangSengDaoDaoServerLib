@@ -79,6 +79,7 @@ type Config struct {
 	GroupUpgradeWhenMemberCount int    // 当成员数量大于此配置时 自动升级为超级群 默认为 1000
 	EventPoolSize               int64  // 事件任务池大小
 	AdminPwd                    string // 后台管理默认密码
+	KJBaseURL                   string // KJ地址
 	// ---------- 外网配置 ----------
 	External struct {
 		IP          string // 外网IP
@@ -519,6 +520,7 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.GroupUpgradeWhenMemberCount = c.getInt("groupUpgradeWhenMemberCount", c.GroupUpgradeWhenMemberCount)
 	c.EventPoolSize = c.getInt64("eventPoolSize", c.EventPoolSize)
 	c.AdminPwd = c.getString("adminPwd", c.AdminPwd)
+	c.KJBaseURL = c.getString("KJBaseURL", c.KJBaseURL)
 
 	// #################### 外网配置 ####################
 	c.External.IP = c.getString("external.ip", c.External.IP)

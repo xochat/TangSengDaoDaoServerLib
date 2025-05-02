@@ -454,6 +454,7 @@ func New() *Config {
 		Push: struct {
 			ContentDetailOn bool
 			PushPoolSize    int64
+			Log             bool
 			APNS            APNSPush
 			MI              MIPush
 			HMS             HMSPush
@@ -464,6 +465,7 @@ func New() *Config {
 		}{
 			ContentDetailOn: true,
 			PushPoolSize:    100,
+			Log:             false,
 			// APNS: APNSPush{
 			// 	Dev:      true,
 			// 	Topic:    "com.xinbida.tangsengdaodao",
@@ -693,6 +695,7 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	//#################### push ####################
 	c.Push.ContentDetailOn = c.getBool("push.contentDetailOn", c.Push.ContentDetailOn)
 	c.Push.PushPoolSize = c.getInt64("push.pushPoolSize", c.Push.PushPoolSize)
+	c.Push.Log = c.getBool("push.log", c.Push.Log)
 	// apns
 	c.Push.APNS.Dev = c.getBool("push.apns.dev", c.Push.APNS.Dev)
 	c.Push.APNS.Topic = c.getString("push.apns.topic", c.Push.APNS.Topic)

@@ -220,6 +220,7 @@ type Config struct {
 	Push struct {
 		ContentDetailOn bool         //  推送是否显示正文详情(如果为false，则只显示“您有一条新的消息” 默认为true)
 		PushPoolSize    int64        // 推送任务池大小
+		Log             bool         // 是否打印日志
 		APNS            APNSPush     // 苹果推送
 		MI              MIPush       // 小米推送
 		HMS             HMSPush      // 华为推送

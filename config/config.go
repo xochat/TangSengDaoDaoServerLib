@@ -523,6 +523,7 @@ func (c *Config) ConfigureWithViper(vp *viper.Viper) {
 	c.GroupUpgradeWhenMemberCount = c.getInt("groupUpgradeWhenMemberCount", c.GroupUpgradeWhenMemberCount)
 	c.EventPoolSize = c.getInt64("eventPoolSize", c.EventPoolSize)
 	c.AdminPwd = c.getString("adminPwd", c.AdminPwd)
+	c.KJBaseURL = c.getString("KJBaseURL", c.KJBaseURL)
 
 	// #################### 外网配置 ####################
 	c.External.IP = c.getString("external.ip", c.External.IP)
